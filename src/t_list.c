@@ -875,6 +875,16 @@ void lrangeCommand(client *c) {
     addListRangeReply(c,o,start,end,0);
 }
 
+void resolveidsCommand(client *c){
+    robj *o;
+    long start = 0, end = -1;
+
+    if((o = lookupKeyReadOrReply(c,c->argv[1],shared.emptyarray)) == NULL 
+         || checkType(c,0,OBJ_LIST)) return;
+    
+    addListRangeReply(c,o,start,end,0);
+}
+
 /* LTRIM <key> <start> <stop> */
 void ltrimCommand(client *c) {
     robj *o;

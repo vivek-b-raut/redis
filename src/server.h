@@ -3654,6 +3654,7 @@ void lmpopCommand(client *c);
 void llenCommand(client *c);
 void lindexCommand(client *c);
 void lrangeCommand(client *c);
+void resolveidsCommand(client *c);
 void ltrimCommand(client *c);
 void typeCommand(client *c);
 void lsetCommand(client *c);

@@ -1,0 +1,73 @@
+{
+    "RESOLVEIDS": {
+        "summary": "Returns a range of IAB categories elements from a list.",
+        "complexity": "O(S+N) where S is the distance of start offset from HEAD for small lists, from nearest end (HEAD or TAIL) for large lists; and N is the number of elements in the specified range.",
+        "group": "list",
+        "since": "1.0.0",
+        "arity": -3,
+        "function": "resolveidsCommand",
+        "command_flags": [
+            "READONLY"
+        ],
+        "acl_categories": [
+            "LIST"
+        ],
+        "arguments": [
+            {
+                "name": "ip",
+                "type": "string"
+            },
+            {
+                "name": "lat/UserAgent",
+                "type": "string"
+            },
+            {
+                "name": "long",
+                "type": "string",
+                "optional": true
+            },
+            {
+                "name": "accuracy",
+                "type": "string",
+                "optional": true
+            },
+            {
+                "name": "dbrandname",
+                "type": "string",
+                "optional": true
+            },
+            {
+                "name": "dmodelname",
+                "type": "string",
+                "optional": true
+            },
+            {
+                "name": "dos",
+                "type": "string",
+                "optional": true
+            },
+            {
+                "name": "dosver",
+                "type": "string",
+                "optional": true
+            },
+            {
+                "name": "browsername",
+                "type": "string",
+                "optional": true
+            },
+            {
+                "name": "browserversion",
+                "type": "string",
+                "optional": true
+            }
+        ],
+        "reply_schema": {
+            "description": "List of elements in the specified range",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}
